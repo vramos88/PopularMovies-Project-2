@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.vmr.mypopularmovies"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile supportDependencies.design
+    compile supportDependencies.appcompat
+    compile supportDependencies.recyclerview
+
+    compile squareDependencies.retrofit
+    compile squareDependencies.adapter_rx_java
+    compile squareDependencies.converter_gson
+    compile squareDependencies.picasso
+    compile squareDependencies.logging_interceptor
+
+    compile reactiveDependencies.rxandroid
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    compile reactiveDependencies.rxjava
+
+    compile otherDependencies.butterknife
+
+    compile otherDependencies.parceler
+
+
+    testCompile testingDependencies.junit
+    compile 'com.android.support:support-v4:25.2.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    annotationProcessor 'org.parceler:parceler:1.1.6'
+}
