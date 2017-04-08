@@ -6,7 +6,7 @@ package com.vmr.mypopularmovies.api.client;
 
 public class Endpoints {
 
-    public static final String API_KEY = "7ddc0f922272658862a9feb2065d0d7c";
+    public static final String API_KEY = "";
     public static final String BASE_URL = "http://api.themoviedb.org/3/";
     public static final String TOP_RATED = "movie/top_rated";
     public static final String POPULAR = "movie/popular";
